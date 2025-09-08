@@ -18,13 +18,17 @@ public class RegisterRequest {
     @Size(min = 6, max = 100)
     private String password;
     
+    // Optional role assignment (defaults to STAFF if not provided)
+    private String role;
+    
     // Constructors
     public RegisterRequest() {}
     
-    public RegisterRequest(String username, String email, String password) {
+    public RegisterRequest(String username, String email, String password, String role) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
     
     // Getters and Setters
@@ -36,4 +40,7 @@ public class RegisterRequest {
     
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
+    
+    public String getRole() { return role; }
+    public void setRole(String role) { this.role = role; }
 }
